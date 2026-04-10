@@ -215,7 +215,6 @@ img {
 ::-webkit-scrollbar-thumb:hover {
     background: #e33117;
 }
-
 /* Website Scrollbar CSS  */
 
 /* Section Heading CSS Start */
@@ -642,7 +641,7 @@ button.scroll_down::after {
 }
 
 .badge_heading {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
 }
 
 .collection-card p {
