@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <meta name="title" content="OddTops – Authentic Signed Football Jerseys & Collectibles">
-    <meta name="description" content="Discover exclusive hand-signed football collectibles at OddTops. Sourced from private signing events and fully authenticated with secure certificates for true collector value.">
-    <meta name="keywords" content="signed football jerseys, football collectibles, autographed jerseys, authenticated sports memorabilia, rare football items, OddTops">
+    <meta name="description"
+        content="Discover exclusive hand-signed football collectibles at OddTops. Sourced from private signing events and fully authenticated with secure certificates for true collector value.">
+    <meta name="keywords"
+        content="signed football jerseys, football collectibles, autographed jerseys, authenticated sports memorabilia, rare football items, OddTops">
     <meta name="author" content="OddTops">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/aos.css">
@@ -55,9 +57,12 @@
                     Featuring Icons, Legends & Elite Clubs From Around The World.
                 </h2>
                 <p data-aos="fade-up" data-aos-duration="1400">
-                    At Oddtops,discover exclusive, hand-signed football collectibles sourced directly from private signing events. Each piece is fully authenticated and backed by a secure certificate, ensuring true collector value.
+                    At Oddtops,discover exclusive, hand-signed football collectibles sourced directly from private
+                    signing events. Each piece is fully authenticated and backed by a secure certificate, ensuring true
+                    collector value.
                 </p>
-                <div class="banner_btns flex flex-column flex-sm-row gap-3 text-center" data-aos="fade-left" data-aos-duration="1000">
+                <div class="banner_btns flex flex-column flex-sm-row gap-3 text-center" data-aos="fade-left"
+                    data-aos-duration="1000">
                     <a class="butn" href="shirts">Browse Collection</a>
                     <a class="butn" href="authentication">Verify Authenticity </a>
                 </div>
@@ -178,7 +183,9 @@
                                     Authenticity is at the core of every item we offer.
                                 </p>
                                 <p class="mb-3">
-                                    At Oddtops , all memorabilia is signed in controlled, private sessions with verified representatives. We do not source products from open public signings or unverified third-party channels.
+                                    At Oddtops , all memorabilia is signed in controlled, private sessions with verified
+                                    representatives. We do not source products from open public signings or unverified
+                                    third-party channels.
                                 </p>
                             </div>
                         </div>
@@ -276,7 +283,10 @@
                                     Trusted by Football Collectors Around the World
                                 </h2>
                                 <p class="mb-3">
-                                    At Oddtops , we specialise in sourcing authentic signed football memorabilia through carefully managed private signing sessions and trusted industry partnerships. Every collectible is selected with a focus on quality, traceability, and long-term value for supporters and collectors alike.
+                                    At Oddtops , we specialise in sourcing authentic signed football memorabilia through
+                                    carefully managed private signing sessions and trusted industry partnerships. Every
+                                    collectible is selected with a focus on quality, traceability, and long-term value
+                                    for supporters and collectors alike.
                                 </p>
                                 <p class="mb-3">
                                     Our team works closely with professional players, representatives, and authorised
@@ -569,7 +579,7 @@
                         <p class="text_white mt-4">
                             9:00 – 18:00 (Local Time)
                         </p>
-                     
+
 
                     </div>
 
@@ -588,11 +598,13 @@
     <!-- Footer End -->
 
 
-    <div class="card cookie-alert show">
+    <div class="card cookie-alert">
         <div class="card-body">
             <h4 class="card-title">🍪</h4>
             <h5 class="card-title"> Use of cookies</h5>
-            <p class="card-text">This website uses cookies to enhance your browsing experience. By continuing to use this site, you agree to our use of cookies. Learn more in our <a href="./privacy-policy">Privacy Policy</a>.</a></p>
+            <p class="card-text">This website uses cookies to enhance your browsing experience. By continuing to use
+                this site, you agree to our use of cookies. Learn more in our <a href="./privacy-policy">Privacy
+                    Policy</a>.</a></p>
             <div class="btn-toolbar justify-content-start gap-2">
                 <a href="javascript:void(0)" class="butn black border accept-cookies">Accept</a>
                 <a href="javascript:void(0)" class="butn black reject-cookies">Reject</a>
@@ -603,53 +615,63 @@
 
 
     <script>
+
         (function () {
             "use strict";
 
             var cookieAlert = document.querySelector(".cookie-alert");
-            var acceptCookies = document.querySelector(".accept-cookies");
-            var rejectCookies = document.querySelector(".reject-cookies");
+            var acceptBtn = document.querySelector(".accept-cookies");
+            var rejectBtn = document.querySelector(".reject-cookies");
 
-            cookieAlert.offsetHeight;
+            // If elements not found, stop script
+            if (!cookieAlert || !acceptBtn || !rejectBtn) return;
 
-            if (!getCookie("acceptCookies") && !getCookie("rejectCookies")) {
-                cookieAlert.classList.add("show");
+            // Check cookie on page load
+            var consent = getCookie("cookieConsent");
+
+            if (!consent) {
+                cookieAlert.classList.add("show"); // show if no choice made
+            } else {
+                cookieAlert.classList.remove("show"); // hide if already decided
             }
 
-            acceptCookies.addEventListener("click", function () {
-                setCookie("acceptCookies", true, 60);
+            // Accept cookies
+            acceptBtn.addEventListener("click", function () {
+                setCookie("cookieConsent", "accepted", 60);
                 cookieAlert.classList.remove("show");
             });
 
-            rejectCookies.addEventListener("click", function () {
-                setCookie("rejectCookies", true, 60);
+            // Reject cookies
+            rejectBtn.addEventListener("click", function () {
+                setCookie("cookieConsent", "rejected", 60);
                 cookieAlert.classList.remove("show");
             });
+
         })();
 
-        function setCookie(cname, cvalue, exdays) {
+        // Set cookie
+        function setCookie(name, value, days) {
             var d = new Date();
-            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
             var expires = "expires=" + d.toUTCString();
-            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;SameSite=Lax";
+            document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Lax";
         }
 
-        function getCookie(cname) {
-            var name = cname + "=";
+        // Get cookie
+        function getCookie(name) {
+            var cname = name + "=";
             var decodedCookie = decodeURIComponent(document.cookie);
-            var ca = decodedCookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) === ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) === 0) {
-                    return c.substring(name.length, c.length);
+            var cookies = decodedCookie.split(';');
+
+            for (var i = 0; i < cookies.length; i++) {
+                var c = cookies[i].trim();
+                if (c.indexOf(cname) === 0) {
+                    return c.substring(cname.length, c.length);
                 }
             }
             return "";
         }
-       </script>
+    </script>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/aos.js"></script>
     <script src="assets/js/bootstrap.js"></script>
