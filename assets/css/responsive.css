@@ -248,4 +248,7 @@
     section.sub-banner {
         height: 30.875rem;
     }
+    .hero h1 {
+        font-size: 2.55rem;
+    }
 }
