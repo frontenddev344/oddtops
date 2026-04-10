@@ -615,62 +615,61 @@
 
 
     <script>
+(function () {
+    "use strict";
 
-        (function () {
-            "use strict";
+    var cookieAlert = document.querySelector(".cookie-alert");
+    var acceptBtn = document.querySelector(".accept-cookies");
+    var rejectBtn = document.querySelector(".reject-cookies");
 
-            var cookieAlert = document.querySelector(".cookie-alert");
-            var acceptBtn = document.querySelector(".accept-cookies");
-            var rejectBtn = document.querySelector(".reject-cookies");
+    // If elements not found, stop script
+    if (!cookieAlert || !acceptBtn || !rejectBtn) return;
 
-            // If elements not found, stop script
-            if (!cookieAlert || !acceptBtn || !rejectBtn) return;
+    // Check cookie on page load
+    var consent = getCookie("cookieConsent");
 
-            // Check cookie on page load
-            var consent = getCookie("cookieConsent");
+    if (!consent) {
+        cookieAlert.classList.add("show"); // show if no choice made
+    } else {
+        cookieAlert.classList.remove("show"); // hide if already decided
+    }
 
-            if (!consent) {
-                cookieAlert.classList.add("show"); // show if no choice made
-            } else {
-                cookieAlert.classList.remove("show"); // hide if already decided
-            }
+    // Accept cookies
+    acceptBtn.addEventListener("click", function () {
+        setCookie("cookieConsent", "accepted", 60);
+        cookieAlert.classList.remove("show");
+    });
 
-            // Accept cookies
-            acceptBtn.addEventListener("click", function () {
-                setCookie("cookieConsent", "accepted", 60);
-                cookieAlert.classList.remove("show");
-            });
+    // Reject cookies
+    rejectBtn.addEventListener("click", function () {
+        setCookie("cookieConsent", "rejected", 60);
+        cookieAlert.classList.remove("show");
+    });
 
-            // Reject cookies
-            rejectBtn.addEventListener("click", function () {
-                setCookie("cookieConsent", "rejected", 60);
-                cookieAlert.classList.remove("show");
-            });
+})();
 
-        })();
+// Set cookie
+function setCookie(name, value, days) {
+    var d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Lax";
+}
 
-        // Set cookie
-        function setCookie(name, value, days) {
-            var d = new Date();
-            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-            var expires = "expires=" + d.toUTCString();
-            document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Lax";
+// Get cookie
+function getCookie(name) {
+    var cname = name + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var cookies = decodedCookie.split(';');
+
+    for (var i = 0; i < cookies.length; i++) {
+        var c = cookies[i].trim();
+        if (c.indexOf(cname) === 0) {
+            return c.substring(cname.length, c.length);
         }
-
-        // Get cookie
-        function getCookie(name) {
-            var cname = name + "=";
-            var decodedCookie = decodeURIComponent(document.cookie);
-            var cookies = decodedCookie.split(';');
-
-            for (var i = 0; i < cookies.length; i++) {
-                var c = cookies[i].trim();
-                if (c.indexOf(cname) === 0) {
-                    return c.substring(cname.length, c.length);
-                }
-            }
-            return "";
-        }
+    }
+    return "";
+}
     </script>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/aos.js"></script>

@@ -200,7 +200,7 @@ img {
 
 /* Website Scrollbar CSS  */
 ::-webkit-scrollbar {
-    width: 0.625rem;
+    width: 0.75rem;
 }
 
 ::-webkit-scrollbar-track {
