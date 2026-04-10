@@ -1,0 +1,251 @@
+@media screen and (max-width:1199px) {
+
+    html {
+        font-size: 15px;
+    }
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .featured_legend_sec .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .main-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        padding: 50px;
+        background-color: #000;
+        transform: translateX(-100%);
+        transition: all 0.3s linear;
+        z-index: 100;
+        color: #fff;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .menuToggle .main-navbar {
+        transform: translateX(0);
+        justify-content: flex-start;
+    }
+
+    .main-navbar ul {
+        flex-direction: column;
+
+    }
+    
+    .menu-icon {
+        display: block;
+    }
+    .close-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: block;
+        color: #fff;
+        text-align: end;
+        z-index: 55;
+    }
+    .featured_legend_sec .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .p-lg-5 {
+        padding: 2rem!important;
+    }
+    .timeline-card h3 , .timeline-card h2 {
+        font-size: 2rem;
+    }
+    .timeline-card p {
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .why_trust_us_img_outer {
+        height: 25rem;
+    }
+
+    .why_trust_us_cards_content {
+        padding: 2rem;
+    }
+
+    .why_trust_us_amenities ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .footer-links {
+        padding-left: 0;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 15px;
+    }
+
+    .footer-logo {
+        grid-column: 1 / -1;
+    }
+
+    .footer-links,
+    .footer-contact {
+        grid-column: auto;
+        padding-left: 0;
+    }
+    .main-navbar ul li a {
+        font-size: 1.2rem;
+    }
+    .featured_legend_sec .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .premium-card {
+        padding: 1.2rem;
+    }
+
+    .featured_legend_card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .featured_legend_sec .img_wrap {
+        max-width: 100%;
+    }
+    .card-content {
+        padding: 2rem 0;
+    }
+    .collection-card .img-fluid {
+        max-width: 100%;
+        height: 100%;
+    }
+    .collection-card .align-items-center {
+        align-items: stretch !important;
+        
+    }
+    .collection-card .card-image {
+        height: 100%;
+        max-height: 25rem;
+    }
+    .collection-card h3 , .collection-card h2 {
+        font-size: 2rem;
+    }
+    .card-content {
+        padding: 0 1rem 2rem 1rem;
+    }
+    .about_after_banner .jersey-img {
+        max-height: 25rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    html {
+        font-size: 14px;
+    }
+    .why_trust_us_amenities ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why_trust_us_img_outer {
+        height: 20rem;
+    }
+    .footer-logo a {
+        width: 120px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.25rem;
+        padding-top: 1.5625rem;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-logo,
+    .footer-links,
+    .footer-contact {
+        grid-column: 1 / -1;
+        padding-left: 0;
+    }
+    .featured_legend_sec .content {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .timeline-card {
+        margin-left: 50px;
+    }
+    .hero h2 {
+          line-height: 1.2;
+    }
+    .section_heading {
+        font-size: 2.5rem;
+    }
+    .py-7 {
+        padding: 3.375rem 0;
+    }
+    .footer-pages-wrap {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .trust-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .trust-item {
+        justify-content: flex-start;
+        align-items: center;
+        padding-left:5rem;
+    }
+    .featured_legend_sec .img_wrap img {
+        height: 350px;
+    }
+
+    .featured_legend_sec .grid {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .collection-card h3 ,.collection-card h2 {
+        font-size: 2rem;
+    }
+    .section_heading {
+        font-size: 2.2rem;
+    }
+    section.sub-banner {
+        height: 35.875rem;
+    }
+    section.sub-banner h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    .jerseymain p {
+        font-size: 0.9375rem;
+    }
+    .sub-banner.authentication {
+        height: 40.875rem;
+    }
+    .timeline_steps::before , .timeline-marker {
+        left: 18px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .why_trust_us_amenities ul {
+        grid-template-columns: 1fr;
+    }
+    .trust-item {
+        padding-left: 1.5rem;
+    }
+    section.sub-banner {
+        height: 30.875rem;
+    }
+}
